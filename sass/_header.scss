@@ -1,0 +1,90 @@
+
+
+
+.my-navbar{
+    padding: 1rem;
+
+     padding-left: 6rem;
+     padding-right:6rem;
+     background-color: #fff;
+
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     -ms-flex-align: center;
+     align-items: center;
+     -ms-flex-pack: justify;
+     justify-content: space-between;
+     will-change: box-shadow, transform;
+     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+     border-bottom: 1px solid rgb(212, 206, 206);
+     transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+     padding-bottom: 0.51rem;
+     margin-bottom: 2rem;
+     .hide-lg{
+         display:none;
+     }
+    a{
+        .img{
+            max-width: 40px;
+            min-width: 40px;
+            min-height: 30px;
+            max-height: 35px;
+        }
+    }
+    .my-navbar-brand {
+        display: inline-block;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+        margin-top: -10px;
+    }
+
+
+    .listnav{
+
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        .my-nav-item {
+            display: block;
+            padding: 0rem 0.1rem;
+            text-align: justify;
+            text-transform: capitalize;
+          }
+          .dropdown-menu{
+            display:none;
+
+          }
+
+          li > a {
+            font-size: 14px;
+            position: relative;
+            color: rgb(48, 47, 47);
+            font-family: Sans-serif	, Monospace, serif;
+            text-transform: uppercase;
+
+        }
+
+    }
+    .nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+      }
+    
+     
+}

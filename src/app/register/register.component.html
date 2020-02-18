@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+
+<div class="container mt-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-7 about-left mt-5">
+      <h3>LAP</h3>
+      <p>Modern Real Estate Made Simple.
+        All the capabilities you’d expect from a full-featured platform,
+        without the pain of navigating complex systems.</p>
+        <h6>FREE to join</h6>
+      <img class="img-fluid" src="http://localhost:8000/img/sideimage.png" alt="">
+
+    </div>
+    <div class="col-md-5 card p-5 about-right">
+     
+      <div class="wow fadeIn" data-wow-duration="1s">
+  
+          <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <h5 *ngIf="success">Your form is valid!</h5>
+            <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
+            <div class="form-group">
+              <label for="email"><h5 class="pb-2"> Full Name</h5></label>
+              <input type="name" class="form-control mt-2" formControlName="name">
+              <div *ngIf="submitted && registerForm.controls.name.errors" class="error">
+                  <div *ngIf="registerForm.controls.name.errors.required">Your name is required</div>
+               </div>
+            </div>
+            <div class="form-group">
+              <label for="email"><h5 class="pb-2"> Email Address</h5></label>
+              <input type="email" class="form-control mt-2" formControlName="email">
+              <div *ngIf="submitted && registerForm.controls.email.errors" class="error">
+                  <div *ngIf="registerForm.controls.email.errors.required">Your Email is required</div>
+               </div>
+            </div>
+            <div class="form-group">
+
+              <label for="password"><h5 class="pb-2">Password</h5></label>
+              <input type="password" class="form-control  mt-2" name="password" placeholder="Password" formControlName="password">
+              <div *ngIf="submitted && registerForm.controls.password.errors" class="error">
+                  <div *ngIf="registerForm.controls.password.errors.required">A message is required</div>
+              </div>
+            
+            </div>
+            <button  type="submit"  class=" primary-btn text-right">Register </button>
+
+          </form>
+          <hr>     
+
+          <a class="I have an Account" style="text-align: left;color: rgb(11, 149, 204);font-size: 18px;" href="login">I Have An Account</a>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+<app-footer></app-footer>
+

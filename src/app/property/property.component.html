@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+<div class="bg-light  border-top border-1 p-3" ></div>
+
+
+
+<div class="bg-light  ">
+  <div class="container ">
+    <div class="row">
+      <div class="col-12">
+
+        <h2 class="p-2 bg-white">
+           {{ Property.title }} <small>({{  getMoment(Property.created_at)  }})  </small>
+
+        </h2>
+
+      </div>
+
+        <!-- Image -->
+        <div class="col-12 col-lg-6">
+            <div class="ml-6 bg-white mb-3">
+                <div class="card-body">
+                    <a href="">
+                        <img class="img-fluid"  src={{serverimg+Property.image}} />
+                    </a>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Add to cart -->
+        <div class="col-12 col-lg-6 bg-light ">
+            <div class="bg-white mb-3">
+                <div class="card-body">
+                        <h1  class="titlegrandproperty mt-5" style="font-size: 30px;">
+                            <strong *ngIf="Property.sale==1">
+                                {{ Property.price }}$
+                            </strong>
+                            <strong *ngIf="Property.rent==1">
+                                {{ Property.price }}$ Montely
+                            </strong>
+                        </h1>
+
+                        <div class="row  mt-4">
+                            <span class="col-md-5 text-left" >Category</span>
+                            <span class="col-md-7  text-left textgreen">{{ Property.categorie.name }} </span>
+                        </div>
+                        <div class="row mt-3">
+                            <span class="col-md-5  text-left" >Phone</span>
+                            <span class="col-md-7  text-left textgreen">
+                                <span  *ngIf="auth" >
+                                    <i  class="fas fa-phone"></i>  {{ Property.phone }}
+                                </span>
+                                <span  *ngIf="!auth" >
+                                    <i class="fa fa-lock"> </i> ###########
+                                </span>
+                            </span>
+
+                        </div>
+                        <div class="row mt-5">
+                            <span class="col-md-5  text-left" >Near City</span>
+                            <span class="col-md-7 text-left textgreen">
+                                <i class="fas fa-map-marker-alt "> </i> {{ Property.near_city }}
+                            </span>
+                        </div>
+                        <div class="row mt-3">
+                            <span class="col-md-5 text-left" >Address</span>
+                            <span class="col-md-7 text-left textgreen fontaddress">
+                                {{ Property.address }}
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+
+                            <button *ngIf="Property.sale==1"  class=" primary-btn mt-2 " style="width: 100%;">for Sale</button>
+                            <button *ngIf="Property.rent==1"  class=" primary-btn mt-2 " style="width: 100%;">for Rent</button>
+
+                        </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+  
+    <div class="row ">
+
+        <div class="col-12 bg-light">
+            <div class="card border-light mb-3">
+                <div class="card-header my-btn my-btn-primary pt-3 pb-1 text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ Property.description }}  
+                    </p>
+                </div>
+            </div>
+        </div>
+  
+    
+    </div>
+  </div>
+
+</div>

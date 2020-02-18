@@ -1,0 +1,169 @@
+
+<app-header></app-header>
+
+
+
+	<!-- Start Banner Area -->
+	<section class="home-banner-area relative  " >
+		<div class=" inputs-search ">
+			<div class="container">
+				<div class="row  d-flex align-items-center justify-content-center ">
+					
+							<form class="form-box  mt-5">
+								   <div class=" searchbtns mr-2 mt-5 pt-2">
+								        <input type="text" v-model="sname" (keyup)="onSearch($event.target.value)"  placeholder="Search Properties" class="form-control" name="username">
+									</div>
+
+									<div class=" searchbtns mr-2 mt-5 pt-2">
+										<select type="text" class="primary-btn transparent ml-3 mr-10 mb-10 wow fadeInDown"   (change)="setCategory($event.target.value)" >
+											<option   value="">All</option>
+											<option  *ngFor="let category of Categories" [value]="category.id">{{category.name}}</option>
+										</select>
+										<select type="text" class="primary-btn transparent ml-3 mr-10 mb-10 wow fadeInDown"   (change)="setCity($event.target.value)" >
+											<option   value="">All</option>
+											<option  *ngFor="let city of Cities" [value]="city.name">{{city.name}}</option>
+										</select>
+										<button *ngIf=" sale" (click)="setSale(true)" data-wow-duration="1s" data-wow-delay="1.5s" class="my-btn transparent ml-3 mr-10 mb-10 wow fadeInDown">Sale</button>
+										<button *ngIf="!sale" (click)="setSale(false)"  data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent ml-3 mr-10 mb-10 wow fadeInDown">Sale</button>
+										<button *ngIf=" rent" (click)="setRent(true)"  data-wow-duration="1s" data-wow-delay="1.5s" class="my-btn transparent mr-10 mb-10 wow fadeInDown">Rent</button>
+										<button *ngIf="!rent" (click)="setRent(false)" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Rent</button>
+				
+									
+									</div>
+
+						    </form>
+
+						</div>
+			</div>
+	    </div>
+	</section>
+	<!-- End Banner Area -->
+	<!-- Start Faculty Area -->
+	<section class=" mt-3 mb-3 pt-2 pb-2 ">
+		<div class="fscreen " >
+			<div class="row ">
+				<div class="col-md-9 ">
+
+					<div class="row justify-content-left">
+
+						<div class="col-lg-4 col-md-6 col-sm-12 single-faculty" *ngFor="let property of Properties"  >
+							<div class="justify-content-center">
+								<img style=" max-height:240px; min-height:240px;"  src={{serverimg+property.image}} alt="">
+							</div>
+							<div class="meta-text text-center bg-light ">
+								<a class="" href="{{'property/'+property.titleurl}}" style="font-size:16px;color:rgb(4, 89, 104);">{{ property.title }}</a>
+								<p class="">							
+									<a href="#"><i class="fas fa-map-marker-alt"></i> {{ property.near_city }}</a>
+								</p>
+								<div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+									<p>
+										If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
+									</p>
+								</div>
+								<div class="" style="width: 100%;">
+									<strong><h2 href="#" class="titlegrandproperty" style="font-size: 20px;"><strong>{{ property.price }}$ /mo</strong></h2></strong>
+								</div>
+
+								<div class="titleproperty" style="width: 100%;">
+									<small >
+										<span *ngIf="property.sale==1"> Sale</span>
+										<span *ngIf="property.sale==0"> Rent</span>
+									
+										a
+										
+										{{ property.categorie.name }} 
+							     	</small>
+								</div>
+								<i  class=" primary-btn mt-2 " style="width: 100%;"><a href="{{'property/'+property.titleurl}}" >Explore</a>  </i>
+
+							</div>
+			
+						</div>
+
+					
+					
+					</div>
+					<div class="row justify-content-center">
+						<nav class="mb-4">
+							<ul class="pagination pagination-circle pg-primary mb-0"  *ngIf="nmbrpage>1">
+				
+													<!--First-->
+							<li  (click)="getpage(1)" class="page-item  clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect" >First</a></li>
+				
+													<!--Arrow left-->
+								<li  (click)="getpage(page-1)" class="page-item ">
+									<a class="page-link waves-effect waves-effect" aria-label="Previous">
+										<span aria-hidden="true">«</span>
+										<span class="sr-only">Previous</span>
+									</a>
+								</li>
+								<span  *ngFor="let i of lmbrpage"  >
+													<!--Numbers-->
+								<li  *ngIf=" i == page " (click)="getpage(i)" class="page-item active  "><a class="page-link waves-effect waves-effect my-green" >{{i}}</a></li>
+								<li  *ngIf=" i != page && i>0" (click)="getpage(i)" class="page-item"><a class="page-link waves-effect waves-effect">{{i}}</a></li>
+								</span>
+				
+													<!--Arrow right-->
+								<li  (click)="getpage((page*1)+1)"   class="page-item">
+									<a class="page-link waves-effect waves-effect" aria-label="Next">
+										<span aria-hidden="true">»</span>
+										<span class="sr-only">Next</span>
+									</a>
+								</li>
+								<li   (click)="getpage(nmbrpage)"  class="page-item clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect"  >Last</a></li>
+							</ul>
+						</nav>
+
+					</div>
+		    	</div>
+				<div class="col-md-3 mt-2 ">
+					<h6 class="text-muted">Recents Properties</h6> 
+					<div class="recents card p-0 pb-2 bg-light">
+				
+	
+						<div class="m-1 pt-2 pb-2 bg-white row " *ngFor="let property of Recents">
+							<div class="col-md-6 mt-2">
+	
+							   <img   class="img-fluid" src={{serverimg+property.image}} >
+	
+							</div>
+	
+							<div class="col-md-6 mt-1">
+								<a class="titleproperty" href="{{'property/'+property.titleurl}}">{{ property.title }}</a>
+								<p class="profession">{{  getMoment(property.created_at)  }}</p>
+							</div>
+						</div>
+					</div>
+					<br>
+
+					<h6 class="text-muted">Popular Properties</h6> 
+
+					<div class="recents card p-0 pb-2 bg-light">
+                       <div class="m-1 pt-2 pb-2 bg-white row" *ngFor="let property of Populars">
+							<div class="col-md-6 pt-2">
+								   <img  class="img-fluid" src={{serverimg+property.image}} >
+							</div>
+		
+							<div class="col-md-6 mt-1">
+									<a class="titleproperty" href="{{'property/'+property.titleurl}}">{{ property.title }}</a>
+									<p class="profession">{{ property.views }} views</p>
+								</div>
+							</div>
+	
+					</div>
+
+
+
+		    	</div>
+
+		    </div>
+
+		</div>
+	</section>
+	<!-- End Faculty Area -->
+
+
+
+
+
+	<app-footer></app-footer>

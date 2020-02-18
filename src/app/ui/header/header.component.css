@@ -1,0 +1,23 @@
+
+
+
+@media (min-width: 801px) {
+    .home-banner-area   {
+        text-align: left;
+        height: 150px;
+    }
+}
+
+@media (max-width: 800px) {
+    .home-banner-area   {
+        text-align: left;
+        height: 260px;
+        padding-top: 60px;
+    }
+    .searchbtns  {
+        padding-top: 0px;
+        margin-top: -10px;
+
+    }
+
+}

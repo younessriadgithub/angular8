@@ -1,0 +1,63 @@
+.my-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border: 0.1px solid #dee2e6;
+    background-color: #ffffff;
+    margin: 0.5px;
+   thead {
+      padding: 1.5rem;
+      font-size: 15px;
+
+      vertical-align: top;
+      border: 0.51px solid #a1e3e7;
+      color: #eaecee;
+
+      background-color: #2f7a9c;
+      margin: 0px;
+      tr{
+
+        height: 45px;
+      }
+   
+    }
+    tbody {
+      padding: 0.75rem;
+      padding-top: 1.5rem;
+
+      vertical-align: top;
+      border: 0.51px solid #a5acac;
+      color: #2a2b2c;
+
+      background-color: #ebeeee;
+      margin: 0px;
+      tr{
+
+         padding-top: 1.5rem;
+
+      }
+   
+    }
+ 
+ th,
+ td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+ thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #707479;
+  border: 0.51px solid #a1e3e7;
+
+}
+
+ tbody td {
+  border-top: 2px solid #79828b;
+  border: 0.51px solid #ffffff;
+
+ }
+
+
+}

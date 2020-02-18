@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+
+<div class="container mt-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-7 about-left mt-5">
+      <h3>LAP</h3>
+      <p>Modern Real Estate Made Simple.
+        All the capabilities you’d expect from a full-featured platform,
+        without the pain of navigating complex systems.</p>
+
+      <img class="img-fluid" src="http://localhost:8000/img/sideimage.png" alt="">
+
+    </div>
+    <div class="col-md-5 card p-5 about-right">
+     
+      <div class="wow fadeIn" data-wow-duration="1s">
+  
+            <div *ngIf="!hasToken" >
+
+                <div class="text-center">
+                        <h3><i class="fa fa-lock"></i>  Forgot Password?</h3>
+                        <p>You can reset your password here.</p>
+                        <div class="panel-body">
+                          <h5 *ngIf="success">Your form is valid!</h5>
+    
+                          <form id="register-form" role="form" [formGroup]="restForm" (ngSubmit)="onRest()" class="form" >
+          
+                            <div class="form-group">
+                              <div class="input-group">
+                                <label for="email"><h5 class="pb-2"> Email Address</h5></label>
+                                <input class="form-control mt-4" type="text" formControlName="email">
+                                <div *ngIf="submitted && restForm.controls.email.errors" class="error">
+                                  <div *ngIf="restForm.controls.email.errors.required">Your email is required</div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="form-group">
+                              <button  type="submit"  class=" primary-btn text-right">Rest Password  </button>
+                            </div>
+                            
+                            <input type="hidden" class="hide" name="token" id="token" value=""> 
+                          </form>
+          
+                        </div>
+                </div>
+               
+            </div>
+      
+          <div *ngIf="hasToken">
+              <div class="text-center">
+                    <h3><i class="fa fa-lock"></i>Rest Password?</h3>
+                    <p>You can reset your password here.</p>
+                    <h5 *ngIf="success">Your form is valid!</h5>
+                    <form class="form" [formGroup]="passwordsForm" (ngSubmit)="onChange()">
+      
+                        <h5 *ngIf="success">Your form is valid!</h5>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label for="password"><h5 class="pb-2">New Password</h5></label>
+                                <input class="form-control mt-3" type="text" formControlName="password">
+                                <div *ngIf="submitted && passwordsForm.controls.password.errors" class="error">
+                                  <div *ngIf="passwordsForm.controls.password.errors.required">Your new password is required</div>
+                                </div>
+                            </div>
+
+
+                            <div class="input-group mt-4">
+                                <label for="confirmpassword"><h5 class="pb-2">Confirm Password</h5></label>
+                                <input class="form-control mt-3" type="text" formControlName="password">
+                                <div *ngIf="submitted && passwordsForm.controls.confirmpassword.errors" class="error">
+                                  <div *ngIf="passwordsForm.controls.confirmpassword.errors.required">Your confirm password is required</div>
+                                </div>
+                            </div>
+                        </div>                      
+      
+                        <div class="form-group">
+                                <button  type="submit"  class=" primary-btn text-right">Rest Password  </button>
+                        </div>                        
+                    </form>
+          
+               
+              </div>
+          </div>
+    
+          <hr>     
+
+          <a class="forget password" style="text-align: left;color: rgb(11, 149, 204);font-size: 18px;" href="login">go to home</a>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+<app-footer></app-footer>

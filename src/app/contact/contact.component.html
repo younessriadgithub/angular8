@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+
+  <div class="container mt-5">
+      <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 about-left mt-5">
+            <h3>LAP</h3>
+            <p>Modern Real Estate Made Simple.
+              All the capabilities you’d expect from a full-featured platform,
+              without the pain of navigating complex systems.</p>
+
+            <img class="img-fluid" src="http://localhost:8000/img/sideimage.png" alt="">
+
+          </div>
+          
+          <div class="col-md-5 card p-5 about-right">
+          
+            <div class="wow fadeIn" data-wow-duration="1s">   
+        
+                <form [formGroup]="contactForm" (ngSubmit)="onContact()">
+                    <h5 *ngIf="success">Your form is valid!</h5>
+                    <h1 class="h3 mb-3 font-weight-normal">Contact Us</h1>
+                    <div class="form-group">
+                        <label for="email"><h5 class="pb-2"> Email Address</h5></label>
+                        <input type="email" class="form-control mt-2" formControlName="email">
+                        <div *ngIf="submitted && contactForm.controls.email.errors" class="error">
+                            <div *ngIf="contactForm.controls.email.errors.required">Your name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                      <label for="subject"><h5 class="pb-2">Subject</h5></label>
+                      <input type="text" class="form-control  mt-2" name="subject" placeholder="Subject" formControlName="subject">
+                      <div *ngIf="submitted && contactForm.controls.subject.errors" class="error">
+                          <div *ngIf="contactForm.controls.subject.errors.required">A message is required</div>
+                      </div>
+                    
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control  mt-2" rows="6" name="body"  formControlName="body">
+                        </textarea>
+                    </div>
+
+                    <div *ngIf="submitted && contactForm.controls.body.errors" class="error">
+                        <div *ngIf="contactForm.controls.body.errors.required">A message is required</div>
+                    </div>
+                </form>
+                <button  type="submit"  class=" primary-btn text-right">Send </button>
+
+                <hr>     
+
+                <a class="forget subject" style="text-align: left;color: rgb(11, 149, 204);font-size: 18px;" href="home">go to home</a>
+            </div>
+
+
+          </div>
+
+      </div>
+  </div>
+
+
+
+  <hr>
+
+  <app-footer></app-footer>
+

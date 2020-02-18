@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<div class="container mt-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-7 about-left mt-5">
+      <h3>LAP</h3>
+      <p>Modern Real Estate Made Simple.
+        All the capabilities you’d expect from a full-featured platform,
+        without the pain of navigating complex systems.</p>
+
+      <img class="img-fluid" src="http://localhost:8000/img/sideimage.png" alt="">
+
+    </div>
+    <div class="col-md-5 card p-5 about-right">
+     
+      <div class="wow fadeIn" data-wow-duration="1s">
+  
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <h5 *ngIf="success">Your form is valid!</h5>
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <div class="form-group">
+              <label for="email"><h5 class="pb-2"> Email Address</h5></label>
+              <input type="email" class="form-control mt-2" formControlName="email">
+              <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+                  <div *ngIf="loginForm.controls.email.errors.required">Your name is required</div>
+               </div>
+            </div>
+            <div class="form-group">
+
+              <label for="password"><h5 class="pb-2">Password</h5></label>
+              <input type="password" class="form-control  mt-2" name="password" placeholder="Password" formControlName="password">
+              <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                  <div *ngIf="loginForm.controls.password.errors.required">A message is required</div>
+              </div>
+              <span class="alert">{{msg}}</span>
+            
+            </div>
+            <button  type="submit"  class=" primary-btn text-right">Sign in  </button>
+
+          </form>
+          <hr>     
+
+          <a class="forget password" style="text-align: left;color: rgb(11, 149, 204);font-size: 18px;" href="rest">forgot password</a>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+<app-footer></app-footer>
+

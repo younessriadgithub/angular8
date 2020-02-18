@@ -1,0 +1,90 @@
+
+.nav i{
+
+    color: rgb(231, 231, 238) ;
+}
+   
+a{
+
+    color: rgb(231, 231, 238) ;
+}
+   
+.footer i{
+
+ color: rgb(77, 77, 80) ;
+}
+
+h2,h3{
+
+    color: rgb(7, 133, 150);
+ }
+
+ h1,h4{
+
+    color: rgb(12, 68, 114);
+ }
+
+ 
+ .name{
+
+    color: rgb(7, 133, 150);
+ }
+ .section-count h1,h3{
+
+    color: cornsilk;
+   }
+   
+@media (max-width: 800px) {
+    .top-right ul {
+        text-align: left;
+        margin-top: 30px;
+    }
+    .banner-content{
+        margin-top: -450px;
+    }
+}
+.text-white{
+
+    color: rgb(202, 152, 14);
+
+}
+.text-gr{
+
+    color: rgb(250, 245, 244);
+
+}
+.text-dark{
+
+    color: rgb(123, 127, 128);
+
+}
+.text-black{
+
+    color: rgb(17, 17, 17);
+
+}
+.inputs-title,.inputs-search{
+    opacity: 0.7;  
+
+    background-color: rgb(6, 105, 151);
+    
+
+}
+.navbar{
+    opacity: 0.85;  
+
+    background-color: rgb(5, 73, 104);
+    
+
+}
+
+input[type="text"], textarea {
+
+    background-color : #ffffff; 
+    opacity: 1;  
+    z-index: 10000;
+
+}
+
+
+
